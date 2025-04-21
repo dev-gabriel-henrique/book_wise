@@ -51,7 +51,7 @@ export const MenuButton = styled("button", {
 
   cursor: "pointer",
 
-  transition: "border padding ease .1s",
+  transition: "border color padding ease .5s",
 
   "&:hover": {
     color: "$gray100",
