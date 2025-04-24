@@ -40,7 +40,7 @@ export const { styled, getCssText, globalCss, theme } = createStitches({
     },
 
     lineHeights: {
-      shorter: "125%",
+      shorter: "130%",
       short: "140%",
       base: "160%",
       tall: "180%",
@@ -66,14 +66,16 @@ export const { styled, getCssText, globalCss, theme } = createStitches({
       gray700: "#181C2A",
       gray800: "#0E1116",
 
+      danger: '#F75A68',
+
       gradientVertical: `linear-gradient(180deg, #7FD1CC 0%, #9694F5 100%)`,
       gradientHorizontal: `linear-gradient(90deg, #7FD1CC 0%, #9694F5 100%)`,
     },
 
     radii: {
       xs: "2.5px",
-      sm: "5px",
-      md: "10px",
+      sm: "4px",
+      md: "8px",
       lg: "20px",
       full: "99999px",
     },

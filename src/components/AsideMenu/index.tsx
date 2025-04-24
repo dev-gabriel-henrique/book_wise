@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {
   AsideContainer,
+  AsideLogOut,
   LoginButton,
   MenuButton,
   MenuContainer,
@@ -8,15 +9,12 @@ import {
 } from "./styles";
 
 import logo from "@/assets/logo.png";
-import { Binoculars, ChartLine, SignIn } from "phosphor-react";
+import { Binoculars, ChartLine, SignIn, SignOut } from "phosphor-react";
 import { useState } from "react";
+import { Avatar } from "../Avatar";
 
-export function Aside() {
-  const [selectedButton, setSelectedButton] = useState<string>("");
-
-  const handleSelectButton = (buttonName: string) => {
-    setSelectedButton(buttonName);
-  };
+export function AsideMenu() {
+  const [selectedButton, setSelectedButton] = useState<string>("home");
 
   return (
     <AsideContainer>
@@ -49,10 +47,19 @@ export function Aside() {
       </MenuContainer>
 
       <footer>
-        <LoginButton>
+        <AsideLogOut>
+          <Avatar
+            src="https://github.com/dev-gabriel-henrique.png"
+          />
+          <p>Cristofer</p>
+          <button>
+            <SignOut size={20} />
+          </button>
+        </AsideLogOut>
+        {/* <LoginButton>
           Fazer login
           <SignIn size={20} />
-        </LoginButton>
+        </LoginButton> */}
       </footer>
     </AsideContainer>
   );

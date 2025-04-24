@@ -2,7 +2,7 @@ import { globalStyles } from "@/styles/globals";
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import { useRouter } from "next/router";
-import { Aside } from "@/components/Aside";
+import { AsideMenu } from "@/components/AsideMenu";
 
 globalStyles();
 
@@ -13,9 +13,10 @@ export default function App({
   const router = useRouter();
 
   const isLoginPage = router.pathname === "/login";
+  
   return (
     <SessionProvider session={session}>
-      {!isLoginPage && <Aside />}
+      {!isLoginPage && <AsideMenu />}
       <Component {...pageProps} />
     </SessionProvider>
   );

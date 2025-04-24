@@ -105,3 +105,40 @@ export const LoginButton = styled("button", {
     },
   },
 });
+
+export const AsideLogOut = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  gap: "$3",
+
+  padding: '$1',
+
+  button: {
+    all: "unset",
+    cursor: "pointer",
+
+    "&:hover": {
+      color: "$gray100",
+
+      svg: {
+        color: "$danger",
+      },
+    },
+
+    "&:focus": {
+      outline: "none",
+      border: "none",
+      boxShadow: "0 0 0 2px $colors$gray200",
+    },
+  },
+
+  p: {
+    fontSize: '$sm',
+    flexWrap: 'wrap',
+    color: '$gray200',
+    lineHeight: '$base',
+    width: '3.375rem',
+    wordWrap: 'break-word',
+    textAlign: 'justify'
+  }
+});
