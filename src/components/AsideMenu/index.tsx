@@ -10,11 +10,16 @@ import {
 
 import logo from "@/assets/logo.png";
 import { Binoculars, ChartLine, SignIn, SignOut } from "phosphor-react";
-import { useState } from "react";
 import { Avatar } from "../Avatar";
+import { useRouter } from "next/router";
+import { menuItems, RouteOptions } from "@/utils/menu";
 
 export function AsideMenu() {
-  const [selectedButton, setSelectedButton] = useState<string>("home");
+  const router = useRouter();
+
+  const handleSelectPage = (route: RouteOptions) => {
+    router.push(route);
+  };
 
   return (
     <AsideContainer>
@@ -24,33 +29,23 @@ export function AsideMenu() {
 
       <MenuContainer>
         <MenuList>
-          <li>
-            <MenuButton
-              selected={selectedButton === "home"}
-              onClick={() => setSelectedButton("home")}
-            >
-              <ChartLine size={24} />
-              Inicio
-            </MenuButton>
-          </li>
-
-          <li>
-            <MenuButton
-              selected={selectedButton === "explore"}
-              onClick={() => setSelectedButton("explore")}
-            >
-              <Binoculars size={24} />
-              Explorar
-            </MenuButton>
-          </li>
+          {menuItems.map((item) => (
+            <li key={item.path}>
+              <MenuButton
+                selected={router.route === item.path}
+                onClick={() => handleSelectPage(item.path)}
+              >
+                {item.icon}
+                {item.label}
+              </MenuButton>
+            </li>
+          ))}
         </MenuList>
       </MenuContainer>
 
       <footer>
         <AsideLogOut>
-          <Avatar
-            src="https://github.com/dev-gabriel-henrique.png"
-          />
+          <Avatar src="https://github.com/dev-gabriel-henrique.png" />
           <p>Cristofer</p>
           <button>
             <SignOut size={20} />

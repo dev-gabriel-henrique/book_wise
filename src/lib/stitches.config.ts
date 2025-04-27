@@ -2,8 +2,8 @@ import { createStitches } from "@stitches/react";
 import { Nunito } from "next/font/google";
 
 const nunito = Nunito({
-  variable: '--font-nunito'
-})
+  variable: "--font-nunito",
+});
 
 export const { styled, getCssText, globalCss, theme } = createStitches({
   theme: {
@@ -16,6 +16,7 @@ export const { styled, getCssText, globalCss, theme } = createStitches({
       1: "0.25rem",
       2: "0.5rem",
       3: "0.75rem",
+      "3.5": "0.875rem",
       4: "1rem",
       5: "1.25rem",
       6: "1.5rem",
@@ -66,7 +67,7 @@ export const { styled, getCssText, globalCss, theme } = createStitches({
       gray700: "#181C2A",
       gray800: "#0E1116",
 
-      danger: '#F75A68',
+      danger: "#F75A68",
 
       gradientVertical: `linear-gradient(180deg, #7FD1CC 0%, #9694F5 100%)`,
       gradientHorizontal: `linear-gradient(90deg, #7FD1CC 0%, #9694F5 100%)`,

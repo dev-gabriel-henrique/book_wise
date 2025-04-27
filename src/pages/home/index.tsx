@@ -8,50 +8,58 @@ import {
 } from "./styles";
 import { CaretRight, ChartLineUp } from "phosphor-react";
 import { BookCard } from "@/components/BookCard";
+import { NextSeo } from "next-seo";
 
 export default function Home() {
   return (
-    <main>
-      <MainContainer>
-        <div>
-          <ChartLineUp size={32} />
-          <h1>Início</h1>
-        </div>
-
-        <LastReadContainer>
+    <>
+      <NextSeo
+        title="Home"
+        description="Descubra milhares de livros e venha dar sua avaliação!"
+      />
+      
+      <main>
+        <MainContainer>
           <div>
-            <h5>Sua última leitura</h5>
-            <button>
-              Ver todas <CaretRight size={16} />
-            </button>
+            <ChartLineUp size={32} />
+            <h1>Início</h1>
           </div>
-          <ReviewBox size="sm" />
-        </LastReadContainer>
 
-        <h5>Avaliações mais recentes</h5>
-        <ReviewContainer>
-          <ReviewBox size="md" />
-          <ReviewBox size="md" />
-          <ReviewBox size="md" />
-          <ReviewBox size="md" />
-        </ReviewContainer>
-      </MainContainer>
-      <PopularBooksContainer>
-        <header>
-          <h5>Livros populares</h5>
+          <LastReadContainer>
+            <div>
+              <h5>Sua última leitura</h5>
+              <button>
+                Ver todas <CaretRight size={16} />
+              </button>
+            </div>
+            <ReviewBox size="sm" />
+          </LastReadContainer>
 
-          <button type="button">
-            Ver todos <CaretRight size={16} />
-          </button>
-        </header>
+          <h5>Avaliações mais recentes</h5>
+          <ReviewContainer>
+            <ReviewBox size="md" />
+            <ReviewBox size="md" />
+            <ReviewBox size="md" />
+            <ReviewBox size="md" />
+          </ReviewContainer>
+        </MainContainer>
+        <PopularBooksContainer>
+          <header>
+            <h5>Livros populares</h5>
 
-        <PopularBooksCards>
-          <BookCard size="sm" />
-          <BookCard size="sm" />
-          <BookCard size="sm" />
-          <BookCard size="sm" />
-        </PopularBooksCards>
-      </PopularBooksContainer>
-    </main>
+            <button type="button">
+              Ver todos <CaretRight size={16} />
+            </button>
+          </header>
+
+          <PopularBooksCards>
+            <BookCard size="sm" />
+            <BookCard size="sm" />
+            <BookCard size="sm" />
+            <BookCard size="sm" />
+          </PopularBooksCards>
+        </PopularBooksContainer>
+      </main>
+    </>
   );
 }
