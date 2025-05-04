@@ -23,9 +23,9 @@ export default function App({
           titleTemplate="BookWise | %s"
           openGraph={{
             type: "website",
-            locale: 'pt-BR',
-            url: 'https://bookwise.com.br',
-            siteName: 'BookWise'
+            locale: "pt-BR",
+            url: "https://bookwise.com.br",
+            siteName: "BookWise",
           }}
           additionalLinkTags={[
             {
@@ -39,8 +39,8 @@ export default function App({
             },
           ]}
         />
-        {!isLoginPage && <AsideMenu />}
-        <Component {...pageProps} />
+          {!isLoginPage && <AsideMenu />}
+          <Component {...pageProps} />
       </SessionProvider>
     </>
   );

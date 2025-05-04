@@ -77,7 +77,7 @@ export const { styled, getCssText, globalCss, theme } = createStitches({
       xs: "2.5px",
       sm: "4px",
       md: "8px",
-      lg: "20px",
+      lg: "12px",
       full: "99999px",
     },
   },

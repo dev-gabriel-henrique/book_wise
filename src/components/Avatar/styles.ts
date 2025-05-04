@@ -5,18 +5,40 @@ import { styled } from "@/lib/stitches.config";
 export const AvatarWrapper = styled("div", {
   background: "linear-gradient(180deg, #7FD1CC 0%, #9694F5 100%)",
   borderRadius: "$full",
-  padding: "1px", 
+  padding: "1px",
   display: "inline-block",
-  width: "2.65rem", 
-  height: "2.65rem",
+
+  variants: {
+    size: {
+      md: {
+        width: "2.65rem",
+        height: "2.65rem",
+      },
+      lg: {
+        width: "4.65rem",
+        height: "4.65rem",
+      },
+    },
+  },
 });
 
 export const AvatarContainer = styled(Avatar.Root, {
   borderRadius: "$full",
   display: "inline-block",
-  width: "2.5rem",
-  height: "2.5rem",
   overflow: "hidden",
+  
+  variants: {
+    size: {
+      md: {
+        width: "2.5rem",
+        height: "2.5rem",
+      },
+      lg: {
+        width: "4.5rem",
+        height: "4.5rem",
+      },
+    },
+  },
 });
 
 export const AvatarImage = styled(Avatar.Image, {

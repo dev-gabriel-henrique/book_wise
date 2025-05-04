@@ -35,81 +35,6 @@ export const DiscoverContainer = styled("div", {
   },
 });
 
-export const SearchInputContainer = styled("aside", {
-  position: "absolute",
-  top: "4.5rem",
-  right: "7rem",
-
-  backgroundColor: "transparent",
-  padding: "$3 $5",
-
-  border: "2px solid $gray500",
-  borderRadius: "$xs",
-
-  display: "flex",
-  alignItems: "center",
-
-  "&:has(input:focus)": {
-    borderColor: "$green200",
-
-    svg: {
-      color: "$green200",
-    },
-  },
-
-  "&:has(input:disabled)": {
-    opacity: 0.5,
-    cursor: "not-allowed",
-  },
-
-  svg: {
-    color: "$gray500",
-  },
-
-  button: {
-    all: "unset",
-    display: "flex",
-    alignItems: "center",
-
-    cursor: "pointer",
-
-    svg: {
-      color: "$gray500",
-    },
-
-    "&:hover": {
-      svg: {
-        color: "$green100",
-      },
-    },
-  },
-});
-
-export const SearchInput = styled("input", {
-  fontFamily: "$default",
-  fontSize: "$sm",
-  color: "$gray200",
-  fontWeight: "$regular",
-  background: "transparent",
-  border: "none",
-  lineHeight: "$base",
-  width: "27rem",
-  caretColor: "$green100",
-
-  "&:focus": {
-    outline: 0,
-    boxShadow: "none",
-  },
-
-  "&:disabled": {
-    cursor: "not-allowed",
-  },
-
-  "&::placeholder": {
-    color: "$gray400",
-  },
-});
-
 export const TagContainer = styled('ul', {
   display: 'flex',
   alignItems: "center",
@@ -124,4 +49,14 @@ export const DiscoverBookContainer = styled('div', {
   flexWrap: 'wrap',
   gap: '$5',
   width: '100%'
+})
+
+export const InputContainer = styled('aside', {
+  position: "absolute",
+  top: "4.5rem",
+  right: "7rem",
+})
+
+export const BookButton = styled('div', {
+  cursor: 'pointer',
 })

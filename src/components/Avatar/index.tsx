@@ -7,12 +7,14 @@ import {
   AvatarWrapper,
 } from "./styles";
 
-export interface AvatarProps extends ComponentProps<typeof AvatarImage> {}
+export interface AvatarProps extends ComponentProps<typeof AvatarImage> {
+  size: "md" | "lg"
+}
 
-export function Avatar(props: AvatarProps) {
+export function Avatar({ size, ...props }: AvatarProps) {
   return (
-    <AvatarWrapper>
-      <AvatarContainer>
+    <AvatarWrapper size={size}>
+      <AvatarContainer size={size}>
         <AvatarImage {...props} />
 
         <AvatarFallback delayMs={600}>

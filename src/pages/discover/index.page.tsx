@@ -1,15 +1,18 @@
 import { NextSeo } from "next-seo";
 import {
+  BookButton,
   DiscoverBookContainer,
   DiscoverContainer,
-  SearchInput,
-  SearchInputContainer,
+  InputContainer,
   TagContainer,
 } from "./styles";
 import { Binoculars, MagnifyingGlass } from "phosphor-react";
 import { Tag } from "@/components/Tags";
 import { BookCard } from "@/components/BookCard";
 import { useSearchParams, useRouter } from "next/navigation";
+import { SearchInput } from "@/components/SearchInput";
+import { BookDialog } from "@/components/BookDialog";
+import { useState } from "react";
 
 const tags = [
   { label: "Tudo", value: "tudo" },
@@ -25,6 +28,8 @@ const tags = [
 export default function Discover() {
   const router = useRouter();
   const params = useSearchParams();
+
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
 
   const selectedGender = params?.get("gender") || "tudo";
 
@@ -43,12 +48,18 @@ export default function Discover() {
     );
   };
 
+  const handleClose = () => {
+    setIsDialogOpen(false);
+  };
+
   return (
     <>
       <NextSeo
         title="Explorar"
         description="Descubra milhares de livros de seu interesse, leia os e nos dê sua avaliação!"
       />
+
+      <BookDialog isOpen={isDialogOpen} onClose={handleClose} />
 
       <DiscoverContainer>
         <div>
@@ -69,21 +80,21 @@ export default function Discover() {
         </TagContainer>
 
         <DiscoverBookContainer>
-          <BookCard size="md" />
-          <BookCard size="md" />
-          <BookCard size="md" />
-          <BookCard size="md" />
-          <BookCard size="md" />
-          <BookCard size="md" />
+          {Array.from({ length: 10 }).map((_, i) => (
+            <BookButton
+              key={i}
+              role="button"
+              onClick={() => setIsDialogOpen(true)}
+            >
+              <BookCard size="md" />
+            </BookButton>
+          ))}
         </DiscoverBookContainer>
       </DiscoverContainer>
 
-      <SearchInputContainer>
-        <SearchInput type="text" placeholder="Buscar livro ou autor" />
-        <button type="button">
-          <MagnifyingGlass size={20} />
-        </button>
-      </SearchInputContainer>
+      <InputContainer>
+        <SearchInput placeholder="Buscar livro ou autor" />
+      </InputContainer>
     </>
   );
 }

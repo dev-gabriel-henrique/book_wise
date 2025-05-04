@@ -38,7 +38,10 @@ export function ReviewBox({ size }: ReviewBoxProps) {
       {size === "md" && (
         <ReviewHeader>
           <UserDetails>
-            <Avatar src="https://github.com/dev-gabriel-henrique.png" />
+            <Avatar
+              src="https://github.com/dev-gabriel-henrique.png"
+              size="md"
+            />
 
             <div>
               <p>Jaxson Dias</p>

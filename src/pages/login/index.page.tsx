@@ -3,9 +3,9 @@ import { Icon } from "@iconify/react";
 
 import {
   Container,
-  Hero,
-  SocialLinkButton,
-  SocialLinkContainer,
+  LoginHero,
+  LoginButton,
+  LoginContainer,
 } from "./styles";
 
 import background from "@/assets/background.svg";
@@ -22,29 +22,29 @@ export default function Login() {
         }}
       />
 
-      <Hero>
+      <LoginHero>
         <div>
           <h1>Boas vindas!</h1>
           <p>Faça seu login ou acesse como visitante.</p>
         </div>
 
-        <SocialLinkContainer>
-          <SocialLinkButton>
+        <LoginContainer>
+          <LoginButton>
             <Icon icon="devicon:google" fontSize={32} />
             Entrar com Google
-          </SocialLinkButton>
+          </LoginButton>
 
-          <SocialLinkButton>
+          <LoginButton>
             <Icon icon="akar-icons:github-fill" color="#FFF" fontSize={32} />
             Entrar com GitHub
-          </SocialLinkButton>
+          </LoginButton>
 
-          <SocialLinkButton>
+          <LoginButton>
             <Icon icon="line-md:account" fontSize={32} />
             Acessar como visitante
-          </SocialLinkButton>
-        </SocialLinkContainer>
-      </Hero>
+          </LoginButton>
+        </LoginContainer>
+      </LoginHero>
     </Container>
   );
 }

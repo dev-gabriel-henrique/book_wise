@@ -38,6 +38,8 @@ export const MenuList = styled("ul", {
 });
 
 export const MenuButton = styled("button", {
+  position: "relative",
+
   display: "flex",
   alignItems: "center",
   gap: "$3",
@@ -51,7 +53,7 @@ export const MenuButton = styled("button", {
 
   cursor: "pointer",
 
-  transition: "border color padding ease .5s",
+  transition: "color padding-left ease .5s",
 
   "&:hover": {
     color: "$gray100",
@@ -61,13 +63,17 @@ export const MenuButton = styled("button", {
     selected: {
       true: {
         color: "$gray100",
-        borderLeft: "4px solid $white",
-        paddingLeft: "$2",
+        paddingLeft: "$3",
 
-        "&:focus": {
-          color: "$gray100",
-          borderLeft: "4px solid $white",
-          paddingLeft: "$2",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: "4px",
+          borderRadius: "$xs 0 0 $xs",
+          background: "linear-gradient(180deg, #7FD1CC 0%, #9694F5 100%)",
         },
       },
       false: {
@@ -111,7 +117,7 @@ export const AsideLogOut = styled("div", {
   alignItems: "center",
   gap: "$3",
 
-  padding: '$1',
+  padding: "$1",
 
   button: {
     all: "unset",
@@ -133,12 +139,12 @@ export const AsideLogOut = styled("div", {
   },
 
   p: {
-    fontSize: '$sm',
-    flexWrap: 'wrap',
-    color: '$gray200',
-    lineHeight: '$base',
-    width: '3.375rem',
-    wordWrap: 'break-word',
-    textAlign: 'justify'
-  }
+    fontSize: "$sm",
+    flexWrap: "wrap",
+    color: "$gray200",
+    lineHeight: "$base",
+    width: "3.375rem",
+    wordWrap: "break-word",
+    textAlign: "justify",
+  },
 });

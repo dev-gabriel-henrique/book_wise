@@ -8,7 +8,7 @@ export const Container = styled("main", {
   height: "100vh",
 });
 
-export const Hero = styled("div", {
+export const LoginHero = styled("div", {
   flex: 1,
   display: "flex",
   flexDirection: "column",
@@ -23,13 +23,13 @@ export const Hero = styled("div", {
   },
 });
 
-export const SocialLinkContainer = styled("div", {
+export const LoginContainer = styled("div", {
   display: "flex",
   flexDirection: "column",
   gap: "$4",
 });
 
-export const SocialLinkButton = styled("button", {
+export const LoginButton = styled("button", {
   display: "flex",
   alignItems: "center",
   gap: "$5",

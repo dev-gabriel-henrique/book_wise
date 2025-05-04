@@ -1,6 +1,6 @@
-import { Binoculars, ChartLine } from "phosphor-react";
+import { Binoculars, ChartLine, User } from "phosphor-react";
 
-export type RouteOptions = "/" | "/discover";
+export type RouteOptions = "/" | "/discover" | "/profile";
 
 interface MenuItemsProps {
   label: string;
@@ -18,6 +18,11 @@ const menuItems: MenuItemsProps[] = [
     label: "Explorar",
     icon: <Binoculars size={24} />,
     path: "/discover",
+  },
+  {
+    label: "Perfil",
+    icon: <User size={24} />,
+    path: "/profile",
   },
 ];
 
