@@ -1,6 +1,6 @@
 import { PrismaAdapter } from "@/lib/auth/prisma-adapter";
 import { NextApiRequest, NextApiResponse, NextPageContext } from "next";
-import { NextAuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider, { GoogleProfile } from "next-auth/providers/google";
 import GithubProvider, { GithubProfile } from "next-auth/providers/github";
 
@@ -59,5 +59,27 @@ export function buildNextAuthOptions(
         },
       }),
     ],
-  };
+    callbacks: {
+      async signIn({ account }) {
+        if (
+          !account?.scope?.includes('https://www.googleapis.com/auth/userinfo.profile')
+        ) {
+          return '/register/connect-profile/?error=permissions'
+        }
+
+        return true
+      },
+
+      async session({ session, user }) {
+        return {
+          ...session,
+          user,
+        }
+      },
+    },
+  }
+}
+
+export default async function auth(req: NextApiRequest, res: NextApiResponse) {
+  return await NextAuth(req, res, buildNextAuthOptions(req, res))
 }
